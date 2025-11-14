@@ -1,15 +1,20 @@
+"""
+Helper utilities for CSV ⇄ Excel Converter.
+"""
+
 from pathlib import Path
+from typing import Union
 
-
-def validate_file_exists(path: Path) -> None:
+def validate_file_exists(file_path: Union[str, Path]) -> None:
     """
-    Ensure that a given file exists before processing.
+    Validate that a file exists at the given path.
 
     Args:
-        path (Path): File path.
+        file_path (str | Path): Path to the file.
 
     Raises:
-        FileNotFoundError: If file does not exist.
+        FileNotFoundError: If the file does not exist.
     """
-    if not path.exists():
-        raise FileNotFoundError(f"File not found: {path}")
+    path = Path(file_path)
+    if not path.is_file():
+        raise FileNotFoundError(f"File not found: {file_path}")

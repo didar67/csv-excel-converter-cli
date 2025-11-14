@@ -1,11 +1,10 @@
 """
 Entry point for the CSV-to-Excel Converter tool.
-Now testing config loader integration.
 """
 
 from script.config_loader import load_config
 from core.logger import initialize_logger
-
+from script.cli import main
 
 def main():
     logger = initialize_logger()
