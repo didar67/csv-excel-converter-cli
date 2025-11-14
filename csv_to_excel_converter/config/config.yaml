@@ -1,0 +1,9 @@
+# Default configuration for CSV-to-Excel Converter
+
+paths:
+  input_dir: "data/input"
+  output_dir: "data/output"
+
+settings:
+  overwrite_existing: false
+  log_level: "INFO"
